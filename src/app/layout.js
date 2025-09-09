@@ -1,4 +1,5 @@
-// app/layout.js
+"use client"; // <- ADD THIS AT THE TOP
+
 import "./globals.css";
 import { useEffect } from "react";
 
