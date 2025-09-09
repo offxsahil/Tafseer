@@ -1,6 +1,7 @@
 {
-  "name": "my-next-app",
+  "name": "tafseer-app",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,7 +11,9 @@
     "next": "15.3.5",
     "react": "^18",
     "react-dom": "^18",
-    "swiper": "^11.0.0"
+    "swiper": "^11.0.0",
+    "lucide-react": "^0.372.0",
+    "motion": "^11.11.17"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.13",
