@@ -1,7 +1,6 @@
-"use client"; // <- ADD THIS AT THE TOP
-
+// src/app/layout.js
 import "./globals.css";
-import { useEffect } from "react";
+import ClientFadeIn from "../components/ClientFadeIn"; // import client component
 
 export const metadata = {
   title: "A Special Confession",
@@ -10,19 +9,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  useEffect(() => {
-    // Simple promo effect: fade in the content
-    const body = document.body;
-    body.style.opacity = 0;
-    body.style.transition = "opacity 1.2s ease-in-out";
-    requestAnimationFrame(() => {
-      body.style.opacity = 1;
-    });
-  }, []);
-
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="relative antialiased bg-[var(--background)] text-[var(--foreground)] font-sans overflow-x-hidden">
+        <ClientFadeIn /> {/* Client-side effect */}
+        
         {/* Background animation: floating hearts */}
         <div className="fixed inset-0 -z-10 overflow-hidden">
           <div className="absolute w-full h-full">
@@ -40,7 +31,6 @@ export default function RootLayout({ children }) {
           </div>
         </div>
 
-        {/* Main site content */}
         {children}
 
         {/* Optional: subtle bottom sparkle */}
